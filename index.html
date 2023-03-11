@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link href="/dist/output.css" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Inter' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
+    <link rel="stylesheet" href="./animation.css">
+    <link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
+    <title>Topoptin</title>
+    <!-- <img src="./assets/logo/horizontal-dark.svg" alt="logo-dark" class="block dark:hidden">
+    <img src="./assets/logo/horizontal-light.svg" alt="logo-dark" class="hidden dark:block"> -->
+    <script>
+        // On page load or when changing themes, best to add inline in `head` to avoid FOUC
+        if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark')
+        }
+    </script>
+
+<body>
+
+    <header class="header" id="header">
+        <a href="#" class="logo"><img src="./assets/logo/horizontal-dark.svg" alt="logo-dark" class="block dark:hidden">
+            <img src="./assets/logo/horizontal-light.svg" alt="logo-dark" class="hidden dark:block"></a>
+        <input class="menu-btn" type="checkbox" id="menu-btn" />
+        <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
+        <ul class="menu">
+            <li><a href="#feature">Features</a></li>
+            <li><a href="#how">How It Works</a></li>
+            <li><a href="#pricing">Pricing</a></li>
+
+            <li class="lg:hidden"><a href="#" class="link-btn">Contact Us</a></li>
+
+        </ul>
+
+        <a href="#contact" class="contact-btn">Contact Us</a>
+
+    </header>
+    <button id="theme-toggle" type="button"
+        class="fixed bg-gray-700 dark:bg-gray-100 z-30 bottom-5 right-5 text-gray-500 dark:text-gray-400 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-3">
+        <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5 text-light_topoptin" fill="currentColor"
+            viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+            <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+        </svg>
+        <svg id="theme-toggle-light-icon" class="hidden w-5 h-5 text-light_topoptin" fill="currentColor"
+            viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+            <path
+                d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+                fill-rule="evenodd" clip-rule="evenodd"></path>
+        </svg>
+    </button>
+    <section id="title" class="bg-dark">
+        <div class="h-full ">
+            <div class="content">
+                <div class="main-title">
+                    <!-- Title and subtitle then button -->
+                    <!-- <p class="linear-wipe text-7xl fill-transparent">
+                        Create. Send. Grow.</p> -->
+                    <h3 class="flex flex-row lg:text-9xl text-4xl sm:text-6xl ">
+                        <span class="heading-line heading-line-first">
+                            <span class="heading-line-gradient ">Create.</span>
+                        </span>
+                        <span class="heading-line heading-line-second">
+                            <span class="heading-line-gradient ">Send.</span>
+                        </span>
+                        <span class="heading-line heading-line-third">
+                            <span class="heading-line-gradient ">Grow.</span>
+                        </span>
+                    </h3>
+                    <p class="text-2xl font-light mb-8 text-center text-secondary mt-6">Use drag-and-drop to create
+                        emails in
+                        minutes. No
+                        coding or
+                        design skills needed.</p>
+                    <div class="flex w-40 h-14 items-center justify-center relative mt-12">
+                        <span class="button-line button-line-first">
+                            <span class=" button-line-gradient"></span>
+                        </span>
+                        <span class=" button-line button-line-second">
+                            <span class="button-line-gradient "></span>
+                        </span>
+                        <span class=" button-line button-line-third">
+                            <span class="button-line-gradient"> </span>
+                        </span>
+                        <a href="#" class="dark-button z-10 ">Contact Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <div class="md:content lg:px-32">
+        <img src="./assets/email-templates.svg" class="flex mt-5 w-full px-1 md:px-10">
+    </div>
+    <section id="feature" class="relative mb-16 mt-16">
+        <div class="content">
+            <div class="main-feature">
+                <!-- Centered text with hr then some cards -->
+                <div class="flex items-center justify-center w-full mb-6 mt-6">
+                    <span class="flex px-6 text-6xl font-bold text-black dark:text-white text-center">MAIN
+                        FEATURE</span>
+                </div>
+                <!-- subtitle -->
+
+                <div class="flex text-xl align-middle justify-center text-center text-secondary w-full md:w-3/4 mb-16">
+                    Unleash the full potential of your email campaigns with our advanced email marketing software.
+                    Targeted audience segmentation, survey, and real-time analytics.
+                </div>
+                <!-- 3 cards with hovering effect title and subtitle, button -->
+                <div class="main-cards">
+                    <div
+                        class="flex group w-full h-full text-white relative overflow-hidden rounded-md cursor-pointer  ease-in duration-500">
+                        <img src="./assets/card/landing-page.svg" alt="landing-page"
+                            class="h-full w-full group-hover:scale-150 ease-in-out duration-500">
+                        <span
+                            class="absolute w-full h-full top-0 bg-gradient-to-t from-black opacity-50 group-hover:opacity-100 ease-in-out transition duration-500"></span>
+                        <div class="absolute bottom-0 h-8 m-8">
+                            <h2 class="mb-4 group-hover:-translate-y-14  ease-in-out duration-500 font-bold">LANDING
+                                PAGE</h2>
+                            <div
+                                class="opacity-0 group-hover:opacity-100 group-hover:-translate-y-14 ease-in-out duration-500">
+                                Transform your
+                                email campaigns, boost
+                                conversions, and engage
+                                your audience</div>
+                        </div>
+                    </div>
+                    <div
+                        class="group w-full h-full text-white relative overflow-hidden rounded-md cursor-pointer  ease-in duration-500">
+                        <img src="./assets/card/email.svg" alt="landing-page"
+                            class="h-full w-full group-hover:scale-150 ease-in-out duration-500">
+                        <span
+                            class="absolute w-full h-full top-0 bg-gradient-to-t from-black opacity-50 group-hover:opacity-100 ease-in-out transition duration-500"></span>
+                        <div class="absolute bottom-0 h-8 m-8">
+                            <h2 class="mb-4 group-hover:-translate-y-14  ease-in-out duration-500 font-bold">EMAIL
+                                TEMPLATES</h2>
+                            <div
+                                class="opacity-0 group-hover:opacity-100 group-hover:-translate-y-14 ease-in-out duration-500">
+                                Transform your
+                                email campaigns, boost
+                                conversions, and engage
+                                your audience</div>
+                        </div>
+                    </div>
+                    <div
+                        class="group w-full h-full text-white relative overflow-hidden rounded-md cursor-pointer  ease-in duration-500 ">
+                        <img src="./assets/card/automate.svg" alt="landing-page"
+                            class="h-full w-full group-hover:scale-150 ease-in-out duration-500">
+                        <span
+                            class="absolute w-full h-full top-0 bg-gradient-to-t from-black opacity-50 group-hover:opacity-100 ease-in-out transition duration-500"></span>
+                        <div class="absolute bottom-0 h-8 m-8">
+                            <h2 class="mb-4 group-hover:-translate-y-14  ease-in-out duration-500 font-bold">AUTOMATION
+                            </h2>
+                            <div
+                                class="opacity-0 group-hover:opacity-100 group-hover:-translate-y-14 ease-in-out duration-500">
+                                Create and send automated, triggered emails based on certain actions or
+                                behaviors.</div>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="grid grid-cols-1 sm:grid-cols-2 sm:grid-rows-2 w-full h-full mt-6 text-black  dark:text-white gap-y-14">
+                    <div class="flex flex-col text-center md:text-start w-fit h-full justify-center">
+                        <h2 class="text-3xl font-bold">Landing page builder</h2>
+                        <p class="text-secondary">Easily create professional landing pages with our user-friendly
+                            builder.</p>
+                    </div>
+                    <img src="./assets/feature/feature-landing.svg" alt="landing-page" class="w-full h-full">
+                    <hr class="md:hidden sm:block">
+                    <img src="./assets/feature/feature-template.svg" alt="email-templates" class="w-full h-full">
+
+                    <div class="flex flex-col text-center md:text-end w-fit h-full justify-center">
+                        <h2 class="text-3xl font-bold">EMAIL BUILDER</h2>
+                        <p class="text-secondary">Design beautiful email templates with ease using our intuitive
+                            builder.</p>
+                    </div>
+                    <hr class="md:hidden sm:block">
+
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 w-full h-full gap-6 mt-24">
+                    <div
+                        class="group w-full h-fit text-white relative cursor-pointer  ease-in duration-500 border border-secondary border-y-0 rounded-3xl ">
+                        <i class=" align-center justify-center fa-solid fa-link h-4 w-full ease-in-out duration-500 pt-10 group-hover:blur-md group-hover:scale-150 text-4xl text-light_topoptin"
+                            style="display: flex; justify-content: center; align-items: top;"></i>
+                        <div class="flex flex-col h-10 m-8 ">
+                            <h2
+                                class="mb-4 group-hover:-translate-y-14 text-black dark:text-white  ease-in-out duration-500 font-bold text-center ">
+                                API
+                                Integration</h2>
+                            <div
+                                class="opacity-0 group-hover:opacity-100 group-hover:-translate-y-14 ease-in-out duration-500 text-center text-sm text-secondary">
+                                API integration for seamless data exchange and automation.</div>
+                        </div>
+                    </div>
+                    <div
+                        class="group w-full h-fit text-white relative cursor-pointer  ease-in duration-500 border border-secondary border-y-0 rounded-3xl ">
+                        <i class=" align-center fa-solid fa-chart-line h-4 w-full ease-in-out duration-500 pt-10 group-hover:blur-md group-hover:scale-150 text-4xl text-light_topoptin"
+                            style="display: flex; justify-content: center; align-items: top;"></i>
+                        <div class="flex flex-col h-10 m-8 ">
+                            <h2
+                                class="mb-4 group-hover:-translate-y-14 text-black dark:text-white  ease-in-out duration-500 font-bold text-center ">
+                                Analytics</h2>
+                            <div
+                                class="opacity-0 group-hover:opacity-100 group-hover:-translate-y-14 ease-in-out duration-500 text-center text-sm text-secondary">
+                                Track and analyze data with advanced analytics and reporting.</div>
+                        </div>
+                    </div>
+                    <div
+                        class="group w-full h-fit text-white relative cursor-pointer  ease-in duration-500 border border-secondary border-y-0 rounded-3xl ">
+                        <i class=" align-center fa-solid fa-users-viewfinder h-4 w-full ease-in-out duration-500 pt-10 group-hover:blur-md group-hover:scale-150 text-4xl text-light_topoptin"
+                            style="display: flex; justify-content: center; align-items: top;"></i>
+                        <div class="flex flex-col h-10 m-8 ">
+                            <h2
+                                class="mb-4 group-hover:-translate-y-14 text-black dark:text-white  ease-in-out duration-500 font-bold text-center ">
+                                Segmentation</h2>
+                            <div
+                                class="opacity-0 group-hover:opacity-100 group-hover:-translate-y-14 ease-in-out duration-500 text-center text-sm text-secondary">
+                                Segment and target audience for personalized marketing campaigns.</div>
+                        </div>
+                    </div>
+                    <div
+                        class="group w-full h-fit text-white relative cursor-pointer  ease-in duration-500 border border-secondary border-y-0 rounded-3xl ">
+                        <i class=" align-center fa-solid fa-square-poll-vertical h-4 w-full ease-in-out duration-500 pt-10 group-hover:blur-md group-hover:scale-150 text-4xl text-light_topoptin"
+                            style="display: flex; justify-content: center; align-items: top;"></i>
+                        <div class="flex flex-col h-10 m-8 ">
+                            <h2
+                                class="mb-4 group-hover:-translate-y-14 text-black dark:text-white  ease-in-out duration-500 font-bold text-center ">
+                                Survey</h2>
+                            <div
+                                class="opacity-0 group-hover:opacity-100 group-hover:-translate-y-14 ease-in-out duration-500 text-center text-sm text-secondary">
+                                Collect valuable feedback with built-in survey creation tools. </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <section id="how">
+        <div class="content lg:px-40">
+            <div class="main-how mb-16">
+                <div class="flex items-center justify-center w-full mb-6 mt-16">
+                    <span class="flex items-center px-6 font-bold text-6xl text-black dark:text-white  text-center">HOW
+                        IT WORKS</span>
+                </div>
+                <div class="flex text-xl align-middle justify-center text-center text-secondary w-full md:w-3/4 mb-8">
+                    Discover the full capabilities of our email marketing platform
+                </div>
+                <div class="flex flex-col text-black dark:text-white w-full h-full mt-6">
+                    <div class="accordion">
+                        <div
+                            class="flex flex-col w-full h-fit  text-primary text-start self-center overflow-hidden relative mb-6">
+                            <h1 class="absolute flex w-10 text-4xl font-serif z-20 align-top">
+                                1.
+                            </h1>
+                            <label for="stepOne"
+                                class="flex w-full pl-10 h-10 hover:cursor-pointer text-xl font-bold text-start relative items-center align-middle z-10">Setting
+                                up your
+                                account.
+
+                            </label>
+                            <input type="radio" id="stepOne" class="absolute hidden w-full peer" value="stepOne"
+                                name="accordion" checked></input>
+
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor"
+                                class="w-6 h-6 mt-2 absolute right-0  peer-checked:rotate-180 ease-in-out transition duration-300">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
+                            </svg>
+
+                            <div class="max-h-0 peer-checked:max-h-fit pl-10 text-primary opacity-80">
+                                Once you contact us, our team will guide you through the process of setting up the
+                                software and creating your account.
+                            </div>
+                        </div>
+                        <div
+                            class="flex flex-col w-full h-fit  text-primary text-start self-center overflow-hidden relative mb-6">
+                            <h1 class="absolute flex w-10 text-4xl font-serif z-20 align-top">
+                                2.
+                            </h1>
+                            <label for="stepTwo"
+                                class="flex w-full pl-10 h-10 hover:cursor-pointer text-xl font-bold text-start relative items-center align-middle z-10">Design
+                                your message.
+
+                            </label>
+                            <input type="radio" id="stepTwo" class="absolute hidden w-full peer" value="stepTwo"
+                                name="accordion"></input>
+
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor"
+                                class="w-6 h-6 mt-2 absolute right-0  peer-checked:rotate-180 ease-in-out transition duration-300">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
+                            </svg>
+
+                            <div class="max-h-0 peer-checked:max-h-fit pl-10 text-primary opacity-80">
+                                Design professional-looking emails using customizable templates and a drag-and-drop
+                                editor
+
+                            </div>
+                        </div>
+                        <div
+                            class="flex flex-col w-full h-fit  text-primary text-start self-center overflow-hidden relative mb-6">
+                            <h1 class="absolute flex w-10 text-4xl font-serif z-20 align-top">
+                                3.
+                            </h1>
+                            <label for="stepThree"
+                                class="flex w-full pl-10 h-10 hover:cursor-pointer text-xl font-bold text-start relative items-center align-middle z-10">Scheduling
+                                and automating.
+
+                            </label>
+                            <input type="radio" id="stepThree" class="absolute hidden w-full peer" value="stepThree"
+                                name="accordion"></input>
+
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor"
+                                class="w-6 h-6 mt-2 absolute right-0  peer-checked:rotate-180 ease-in-out transition duration-300">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
+                            </svg>
+
+                            <div class="max-h-0 peer-checked:max-h-fit pl-10 text-primary opacity-80">
+                                Easily schedule and automate your email campaigns with our user-friendly platform
+
+                            </div>
+                        </div>
+                        <div
+                            class="flex flex-col w-full h-fit  text-primary text-start self-center overflow-hidden relative mb-6">
+                            <h1 class="absolute flex w-10 text-4xl font-serif z-20 align-top">
+                                4.
+                            </h1>
+                            <label for="stepFour"
+                                class="flex w-full pl-10 h-10 hover:cursor-pointer text-xl font-bold text-start relative items-center align-middle z-10">Analyze
+                                and optimize your results.
+
+
+                            </label>
+                            <input type="radio" id="stepFour" class="absolute hidden w-full peer" value="stepFour"
+                                name="accordion"></input>
+
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor"
+                                class="w-6 h-6 mt-2 absolute right-0  peer-checked:rotate-180 ease-in-out transition duration-300">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
+                            </svg>
+
+                            <div class="max-h-0 peer-checked:max-h-fit pl-10 text-primary opacity-80">
+                                Track and optimize campaigns performance with analytics and reporting.
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="pricing" class="mb-16">
+        <div class="content">
+            <div class="main-plans">
+                <div class="flex items-center justify-center w-full mb-6 mt-6">
+                    <span class="flex px-6 text-6xl font-bold text-black dark:text-white text-center">PRICING</span>
+                </div>
+                <div class="flex align-middle justify-center text-center text-secondary w-full md:w-3/4 mb-24">
+                    Only pay for what you need, when you need it.
+                </div>
+                <div class="plan grid md:grid-cols-3 grid-cols-1 gap-6 sm:gap-3 w-full h-full mb-8">
+                    <div
+                        class="flex flex-col justify-start items-center w-full h-fit bg-primary p-4 border-secondary border-2 border-y-2 rounded-md max-h-96 shadow-lg hover:shadow-blue-500 hover:-translate-y-2 ease-in-out transition duration-300">
+                        <h1 class=" mb-6 w-full" style="background: -webkit-linear-gradient(45deg, #38B6FF, #0c45b5);
+                        -webkit-background-clip: text;
+                        -webkit-text-fill-color: transparent;">BASIC</h1>
+                        <p class="text-black dark:text-white  flex text-start w-full font-light mb-6 rounded-sm ">
+                            Unlimited emails
+                        </p>
+                        <h4 class="text-sm w-full text-black dark:text-white font-bold mb-3 text-start">
+                            INCLUDES</h4>
+
+                        <ul class="text-start text-secondary w-full text-sm">
+                            <li class=" mb-2 w-full">
+                                <i class="fa-solid fa-check text-black dark:text-white"></i>
+                                Up to 500 Subscribers
+
+                            </li>
+                            <li class=" mb-2">
+                                <i class="fa-solid fa-check text-black dark:text-white"></i>
+                                Follow up Series
+                            </li>
+                            <li class=" mb-2">
+                                <i class="fa-solid fa-check text-black dark:text-white"></i>
+                                Broadcast Message
+                            </li>
+                            <li class="  mb-2">
+                                <i class="fa-solid fa-check text-black dark:text-white"></i>
+                                Email Templates
+                            </li>
+                            <li class="mb-2">
+                                <i class="fa-solid fa-check text-black dark:text-white"></i>
+                                Landing page, Opt-in Form
+                            </li>
+                        </ul>
+                        <a href="#s" class="link-btn w-full h-full text-center">
+                            Get Pricing
+                        </a>
+                    </div>
+                    <div
+                        class="flex flex-col justify-start items-center w-full h-fit bg-primary p-4 border-secondary border-2 border-y-2 rounded-md max-h-96 shadow-lg hover:shadow-purple-700 hover:-translate-y-2 ease-in-out transition duration-300">
+
+                        <h1 class="mb-6 text-black dark:text-white w-full" style="background: -webkit-linear-gradient(45deg, #ff0080, #7928ca);
+                        -webkit-background-clip: text;
+                        -webkit-text-fill-color: transparent;">PREMIUM</h1>
+
+                        <p class="text-black dark:text-white  flex text-start w-full font-light mb-6 rounded-sm ">
+                            Everything in basic
+                        </p>
+                        <h4 class="text-sm w-full text-black dark:text-white font-bold mb-3 text-start">
+                            INCLUDES</h4>
+
+                        <ul class="text-start text-secondary w-full text-sm">
+                            <li class=" mb-2 w-full">
+                                <i class="fa-solid fa-check text-black dark:text-white"></i>
+                                Up to 10’000 Subscribers
+
+                            </li>
+                            <li class=" mb-2">
+                                <i class="fa-solid fa-check text-black dark:text-white"></i>
+                                Advanced Segmentation
+                            </li>
+                            <li class=" mb-2">
+                                <i class="fa-solid fa-check text-black dark:text-white"></i>
+                                Campaign Automation
+                            </li>
+                            <li class="  mb-2">
+                                <i class="fa-solid fa-check text-black dark:text-white"></i>
+                                API Integration
+                            </li>
+                            <li class="mb-2">
+                                <i class="fa-solid fa-check text-black dark:text-white"></i>
+                                24/7 Premium Support
+
+                            </li>
+                        </ul>
+                        <a href="#s" class="link-btn w-full text-center">
+                            Get Pricing
+                        </a>
+                    </div>
+                    <div
+                        class="flex flex-col justify-start items-center w-full h-fit bg-primary p-4 border-secondary border-2 border-y-2 rounded-md max-h-96 shadow-lg hover:shadow-orange-500 hover:-translate-y-2 ease-in-out transition duration-300">
+                        <h1 class="text-black dark:text-white mb-6 w-full" style="background: -webkit-linear-gradient(45deg, #ff4d4d, #f9cb28);
+                        -webkit-background-clip: text;
+                        -webkit-text-fill-color: transparent;">ULTIMATE</h1>
+                        <p class="text-black dark:text-white  flex text-start w-full font-light mb-6 rounded-sm  ">
+                            Everything in premium
+                        </p>
+                        <h4 class="text-sm w-full text-black dark:text-white font-bold mb-3 text-start">
+                            INCLUDES</h4>
+
+                        <ul class="text-start text-secondary w-full text-sm">
+                            <li class=" mb-2 w-full">
+                                <i class="fa-solid fa-check text-black dark:text-white"></i>
+                                Unlimited Subscribers
+
+
+                            </li>
+                            <li class=" mb-2">
+                                <i class="fa-solid fa-check text-black dark:text-white"></i>
+                                Ultimate Campaign Setup
+
+                            </li>
+                            <li class=" mb-2">
+                                <i class="fa-solid fa-check text-black dark:text-white"></i>
+                                Ultimate Workshop Trainings
+
+                            </li>
+                            <li class="  mb-2">
+                                <i class="fa-solid fa-check text-black dark:text-white"></i>
+                                Landing Page Setup
+
+                            </li>
+                            <li class="mb-2">
+                                <i class="fa-solid fa-check text-black dark:text-white  "></i>
+                                Consumer Behavior Reports
+
+                            </li>
+                        </ul>
+                        <a href="#s" class="link-btn mb-0 w-full text-center">
+                            Get Pricing
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--Footer-->
+    <footer>
+        <div class="wave">
+            <div
+                class="flex sm:flex-row flex-col border-t-border_black border-x-0 border w-full bg-gray-100 dark:bg-footer_black  text-white justify-center items-center align-top lg:px-56 py-3 gap-6">
+                <div class="flex flex-col w-32 ">
+                    <a href="#">
+                        <img src="./assets/logo/horizontal-light.svg" class="hidden dark:block">
+                        <img src="./assets/logo/horizontal-dark.svg" class="block dark:hidden">
+                    </a>
+                </div>
+                <div
+                    class="flex sm:flex-row flex-col w-full h-full right-0 text-center justify-center text-black dark:text-white text-xs">
+                    <p>©2023 | Topoptin, Inc. All Rights Reserved&nbsp;</p><a href="privacy.html"
+                        class="hover:text-yellow-400 text-black dark:text-white">privacy policy,&nbsp;</a><a
+                        href="knowledge.html" class="text-black hover:text-yellow-400  dark:text-white">
+                        knowledge
+                        base</a>
+                </div>
+
+            </div>
+        </div>
+    </footer>
+</body>
+<script src="scripts.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+</html>

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link href="/dist/output.css" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Inter' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
+    <link rel="stylesheet" href="./animation.css">
+    <link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
+    <title>knowledge base</title>
+    <script>
+        // On page load or when changing themes, best to add inline in `head` to avoid FOUC
+        if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark')
+        }
+    </script>
+</head>
+
+<body>
+    <header class="header" id="header">
+        <a href="index.html#" class="logo"><img src="./assets/logo/horizontal-dark.svg" alt="logo-dark"
+                class=" block dark:hidden">
+            <img src="./assets/logo/horizontal-light.svg" alt="logo-dark" class=" hidden dark:block"></a>
+        <input class="menu-btn" type="checkbox" id="menu-btn" />
+        <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
+        <ul class="menu">
+            <li><a href="index.html#feature">Features</a></li>
+            <li><a href="index.html#how">How It Works</a></li>
+            <li><a href="index.html#pricing">Pricing</a></li>
+            <li class="lg:hidden"><a href="#" class="link-btn">Contact Us</a></li>
+        </ul>
+        <a href="#contact" class="contact-btn">Contact Us</a>
+    </header>
+    <button id="theme-toggle" type="button"
+        class="fixed bg-gray-700 dark:bg-gray-100 z-30 bottom-5 right-5 text-gray-500 dark:text-gray-400 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-3">
+        <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5 text-light_topoptin" fill="currentColor"
+            viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+            <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+        </svg>
+        <svg id="theme-toggle-light-icon" class="hidden w-5 h-5 text-light_topoptin" fill="currentColor"
+            viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+            <path
+                d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+                fill-rule="evenodd" clip-rule="evenodd"></path>
+        </svg>
+    </button>
+    <section class="pt-32 text-black dark:text-white ">
+        <div class="content">
+            <div class="flex flex-col text-start gap-12">
+                <h2 class="text-4xl">Та <mark class="blue">DKIM</mark> болон <mark class="red">SPF</mark> тохиргоог
+                    яагаад
+                    хийх
+                    хэрэгтэй вэ?
+                </h2>
+                <h4 class="">
+                    <p>
+                        &emsp;Бид мессэж бүрийг тэргүүлэх технологи, аргачлалуудыг ашиглан автоматаар баталгаажуулж
+                        илгээдэг.
+                        Түүнчлэн хэрэглэгчийн домайн нэрэнд зориулсан тохиргоог зайлшгүй хийх шаардлагатай байдаг.
+                    </p>
+                    <p>Нэг үгээр та өөрийн домайн хаягнаас мессэж явуулах эрхийг Топоптин-д итгэмжлэл гаргаж байгаа юм.
+                        Итгэмжлэл буюу DKIM, SPF-ийг домайн нэрэн дээрээ тохируулж өгснөөр <mark class="yellow">junk
+                            folder, spam шүүлтүүрт
+                            орохоос хамгаалж чадах</mark> чухал үзүүлэлт болох юм.
+                    </p>
+                    <br>
+                    <p> &emsp;Жишээ нь: info@test.com хаягаас та broadcast илгээхийн тулд бид эхлээд www.test.com домайн
+                        нэрийн тохиргоон дээр манай Топоптин-ийн DKIM, SPF гэсэн тохиргоог хийж өгөх юм.
+                    </p>
+                    <p> Ингэхдээ та өөрийн бүртгэлтэй домайн үйлчилгээ үзүүлэгч газрын DNS удирдлагын хэсэг дээр TXT
+                        төлөвтэй дараах 2 төрлийн бичлэгийг бүртгэнэ.
+                    </p>
+                </h4>
+            </div>
+        </div>
+    </section>
+    <section class=" text-black dark:text-white mt-16 w-full h-full">
+        <div class="content">
+            <mark class="text-center text-xl mb-6">Доорхи DKIM тохиргооны утга нь жишээ тул ашиглах боломжгүйг
+                анхаарна уу!
+            </mark>
+            <!-- <button onclick="copyFunction('@')" class="copy-btn"><i
+                class="fa-solid fa-copy"></i></button> -->
+            <h2>1. SPF тохиргоо:</h2>
+            <ul class="pl-5 space-y-2">
+                <li><strong>Name хэсэгт:</strong>
+                    <code>@</code>
+                    тэмдэгт оруулах
+                </li>
+                <li><strong>Value хэсэгт:</strong> <code>"v=spf1 a mx include:spf.cheetahinbox.com ~all"</code> </li>
+                <li><strong>TTL хэсэгт:</strong> <code>3600</code> </li>
+            </ul>
+            <br>
+
+            <h2>2. DKIM тохиргоо:</h2>
+            <ul class="pl-5 space-y-2">
+                <li><strong>Name хэсэгт:</strong> <code>cheetah-example.domainkey</code> </li>
+                <li class="space-y-3">
+                    <strong>Value хэсэгт:</strong>
+                    <div><code>v=DKIM1;</code> </div>
+                    <div><code>t=s;</code> </div>
+                    <div><code>h=sha256;</code> </div>
+                    <div>
+                        <code>p=MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDjQsSlyP/7s/SRRGk1foWy7HDu4lv2Lwbru0lmWbHBNNMOunoRkQYVao/WZ5BzNrL29Byu9ZQigeMK+h/VLzwdnDj1HWdDJ2zNuXLTx2U2/NgYVvxfVkbahkAfRJL8AlEsQk65prWmCX5J5JDr9/T4U0JzKuQp9mUPTD2ZVNH9vQIDAQAB;</code>
+
+                    </div>
+                </li>
+                <li><strong>TTL хэсэгт:</strong> <code>3600</code> </li>
+            </ul>
+        </div>
+    </section>
+    <section class="w-full h-fit mt-16 mb-16">
+        <div class="content text-black dark:text-white text-center" style="background-color: transparent !important;">
+            <h2 class="text-2xl mb-8 "><mark class="red">Видео заавар</mark></h2>
+            <iframe title="instruction" width="100%" height="315" src="https://www.youtube.com/embed/XYzBnP8Bp3U">
+            </iframe>
+        </div>
+
+    </section>
+    <footer>
+        <div class="wave">
+            <div
+                class="flex sm:flex-row flex-col border-t-border_black border-x-0 border w-full bg-gray-100 dark:bg-footer_black  text-white justify-center items-center align-top lg:px-56 py-3 gap-6">
+                <div class="flex flex-col w-32 ">
+                    <a href="index.html">
+
+                        <img src="./assets/logo/horizontal-light.svg" class="hidden dark:block">
+                        <img src="./assets/logo/horizontal-dark.svg" class="block dark:hidden">
+                    </a>
+                </div>
+                <div
+                    class="flex sm:flex-row flex-col w-full h-full right-0 text-center justify-center text-black dark:text-white text-xs">
+                    <p>©2023 | Topoptin, Inc. All Rights Reserved&nbsp;</p><a href="privacy.html"
+                        class="hover:text-yellow-400 text-black dark:text-white">privacy policy,&nbsp;</a><a
+                        href="knowledge.html" class="hover:text-yellow-400 text-black dark:text-white">
+                        knowledge
+                        base</a>
+                </div>
+
+            </div>
+        </div>
+    </footer>
+    <script src="scripts.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</body>
+
+</html>
